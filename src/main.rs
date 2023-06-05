@@ -1,8 +1,14 @@
+enum RSEnum {
+    Foo(i32),
+    Bar(String),
+    Baz(Vec<String>),
+}
+
 fn main() {
-    let mut a = vec![];
-    let mut b = a;
+    let foo = RSEnum::Foo(5);
 
-    b.push(1);
-
-    println!("{:?}", b);
+    if let RSEnum::Foo(value) = foo {}
+    match foo {
+        RSEnum::Foo(value) => {}
+    }
 }
